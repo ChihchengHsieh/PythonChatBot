@@ -37,7 +37,9 @@ def test(rank, params, shared_model):
         state, reward, done, _ = env.step(action[0, 0]) # done = done or episode_length >= params.max_episode_length
         reward_sum += reward
         if done: # printing the results at the end of each part
-            print("Time {}, episode reward {}, episode length {}".format(time.strftime("%Hh %Mm %Ss", time.gmtime(time.time() - start_time)), reward_sum, episode_length))
+            print("Time {}, episode reward {}, episode length {}".format(time.strftime("%Hh %Mm %Ss",   
+                                                                                       time.gmtime(time.time() - start_time)),  
+                                                                         reward_sum, episode_length))
             reward_sum = 0 # reinitializing the sum of rewards
             episode_length = 0 # reinitializing the episode length
             actions.clear() # reinitializing the actions
